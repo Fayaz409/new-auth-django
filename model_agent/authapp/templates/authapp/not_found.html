@@ -1,0 +1,23 @@
+{%extends 'authapp/base.html'%}
+{%block title%}
+error not found
+{%endblock%}
+
+{%block content%}
+<center>
+     <h4>
+         User Not Found. Please Try Again. If You do no have an account
+     </h4>
+    <h5>
+        Try Again
+        <a href="{%url 'login'%}">Login</a>
+    </h5>
+    <p>Do not have an account 
+        <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{%url 'signup'%}">
+            Signup
+        </a>
+
+    </p>
+</center>
+
+{%endblock%}

@@ -1,0 +1,58 @@
+{%extends 'model/base.html'%}
+{%block title%}
+employee-detail
+{%endblock%}
+
+{%block content%}
+<div class="text-center">
+
+    <br>
+    <h3 class="text-center">
+      Do You Want Really Want To Delete
+    </h3>
+    <br>
+    <table class="table table-striped table-hover">
+        <tbody>
+          <tr>
+            <th scope="row">First name</th>
+            <td>{{ employee.first_name }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Last name</th>
+            <td>{{ employee.last_name }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Department</th>
+            <td>{{ employee.department }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td>{{ employee.email }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Notes</th>
+            <td>{{ employee.notes }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Birth date</th>
+            <td>{{ employee.birth_date }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
+<br>
+<div class="text-center">
+
+    <a class="text-center" href="{%url 'all-employees'%}">
+    
+        <button class="btn btn-primary">Cancel</button>
+        
+    </a>
+    <br>
+   <form action="{%url 'delete-employee' pk=employee.id%}" method="post">
+    {%csrf_token%}
+    <button class="btn btn-danger">Confirm</button>
+   </form>
+</div>
+{%endblock%}

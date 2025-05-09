@@ -1,0 +1,12 @@
+{%extends 'model/base.html'%}
+{%block title%}
+update employee
+{%endblock%}
+{%block content%}
+<br>
+<form class="text-center" method="post">
+{%csrf_token%}
+{{form.as_p}}
+<button type="submit" class="btn btn-primary">Update</button>
+</form>
+{%endblock%}

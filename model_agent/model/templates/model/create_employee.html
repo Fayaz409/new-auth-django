@@ -1,0 +1,12 @@
+{%extends 'model/base.html'%}
+{%block title%}
+create employee
+{%endblock%}
+{%block content%}
+<br>
+<form class="text-center" method="post">
+{%csrf_token%}
+{{form.as_p}}
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
+{%endblock%}

@@ -65,7 +65,7 @@ def search_view(request):
     query  = request.GET.get('search','').strip()
     employees = Employee.objects.filter(
         Q(first_name__icontains=query)|
-        Q(last_name__incontains=query)|
+        Q(last_name__icontains=query)|
         Q(email__icontains=query)|
         Q(department__dept_name__icontains=query)|
         Q(department__city__icontains=query)
